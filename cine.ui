@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>782</width>
-    <height>449</height>
+    <width>863</width>
+    <height>436</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -24,6 +24,28 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu Condensed</family>
+        <pointsize>19</pointsize>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;    BIENVENIDO A CINEMAGIC'S UPS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
     <item>
      <widget class="QFrame" name="frame">
       <property name="maximumSize">
@@ -45,6 +67,26 @@ padding-left:20px;</string>
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="2" column="5">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Thor: Love and Thunder    (120 m)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="7">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>27</width>
+           <height>359</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="0" column="11">
         <widget class="QPushButton" name="pushButton_4">
          <property name="minimumSize">
@@ -62,67 +104,6 @@ border-color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="minimumSize">
-          <size>
-           <width>150</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">image: url(:ProyectoCinep2/Peliculas/Peliculas/HO00000663.jpg);</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="8">
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="minimumSize">
-          <size>
-           <width>150</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">image: url(:/ProyectoCinep2/Peliculas/Peliculas/HO00000589.jpg);</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5">
-        <widget class="QPushButton" name="pushButton">
-         <property name="minimumSize">
-          <size>
-           <width>150</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">image: url(:/ProyectoCinep2/Peliculas/Peliculas/Thor_Love_and_Thunder-306525443-large.jpg);</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="7">
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>27</width>
-           <height>359</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="0" column="2">
         <spacer name="horizontalSpacer_2">
          <property name="orientation">
@@ -136,80 +117,14 @@ border-color: rgb(0, 0, 0);</string>
          </property>
         </spacer>
        </item>
-       <item row="0" column="9">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>27</width>
-           <height>367</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="8">
-        <widget class="QLabel" name="Peli1_3">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);
-font: 900 11pt &quot;Arial Black&quot;;</string>
-         </property>
+       <item row="2" column="11">
+        <widget class="QLabel" name="label_4">
          <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <string>Top Gun: Maverick  (130 m)</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="5">
-        <widget class="QLabel" name="Peli1_2">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 900 11pt &quot;Arial Black&quot;;
-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="Peli1">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);
-font: 900 11pt &quot;Arial Black&quot;;</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="11">
+       <item row="3" column="11">
         <widget class="QLabel" name="Peli1_4">
          <property name="maximumSize">
           <size>
@@ -229,8 +144,146 @@ font: 900 11pt &quot;Arial Black&quot;;</string>
          </property>
         </widget>
        </item>
+       <item row="3" column="5">
+        <widget class="QLabel" name="Peli1_2">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 900 11pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">image: url(:ProyectoCinep2/Peliculas/Peliculas/HO00000663.jpg);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="9">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>27</width>
+           <height>367</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="8">
+        <widget class="QLabel" name="Peli1_3">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+font: 900 11pt &quot;Arial Black&quot;;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="8">
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">image: url(:/ProyectoCinep2/Peliculas/Peliculas/HO00000589.jpg);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="Peli1">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+font: 900 11pt &quot;Arial Black&quot;;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Los Minions  (85 m)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="8">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Lightyear  (90 m)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QPushButton" name="pushButton">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">image: url(:/ProyectoCinep2/Peliculas/Peliculas/Thor_Love_and_Thunder-306525443-large.jpg);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="outPeliculas"/>
     </item>
    </layout>
   </widget>
@@ -239,7 +292,7 @@ font: 900 11pt &quot;Arial Black&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>782</width>
+     <width>863</width>
      <height>22</height>
     </rect>
    </property>

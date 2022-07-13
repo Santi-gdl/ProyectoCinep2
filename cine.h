@@ -2,6 +2,10 @@
 #define CINE_H
 
 #include <QMainWindow>
+#include <QFile>
+#include <QTextStream>
+
+#include "peliculas.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Cine; }
@@ -16,7 +20,9 @@ public:
     ~Cine();
 
 private:
+    QList<Peliculas*> m_peliculas;
     Ui::Cine *ui;
-    void Peliculas();
+    void Pelicula();
+
 };
 #endif // CINE_H

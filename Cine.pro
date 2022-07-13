@@ -10,10 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    cine.cpp
+    cine.cpp \
+    peliculas.cpp
 
 HEADERS += \
-    cine.h
+    cine.h \
+    peliculas.h
 
 FORMS += \
     cine.ui
