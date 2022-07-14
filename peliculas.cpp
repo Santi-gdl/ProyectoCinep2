@@ -5,7 +5,7 @@ Peliculas::Peliculas(QObject *parent) : QObject(parent)
 
 }
 
-Peliculas::Peliculas(int ID, QString nombre, float duracion, bool estado)
+Peliculas::Peliculas(int ID, QString nombre, float duracion, QString estado)
     :m_ID(ID),m_nombre(nombre),m_duracion(duracion), m_estado(estado)
 {
 
@@ -44,15 +44,15 @@ float Peliculas::getDuracion()
 void Peliculas::setEstado(bool estado)
 {
     QString A;
-    if(estado==1){
+    if(estado==true){
         A="Estreno";
-    }else if(estado==0){
+    }else{
         A="No Estreno";
     }
-     m_estado = estado;
+     m_estado = A;
 }
 
-bool Peliculas::getEstado()
+QString Peliculas::getEstado()
 {
     return m_estado;
 }

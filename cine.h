@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QTextStream>
-
+#include <QDebug>
+#include <QMessageBox>
 #include "peliculas.h"
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,5 @@ private:
     QList<Peliculas*> m_peliculas;
     Ui::Cine *ui;
     void Pelicula();
-
 };
 #endif // CINE_H

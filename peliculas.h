@@ -8,7 +8,7 @@ class Peliculas : public QObject
     Q_OBJECT
 public:
     explicit Peliculas(QObject *parent = nullptr);
-    Peliculas(int ID, QString nombre, float duracion, bool estado);
+    Peliculas(int ID, QString nombre, float duracion, QString estado);
     void setID(int ID);
     int getID();
     void setNombre(const QString &nombre);
@@ -16,13 +16,13 @@ public:
     void setDuracion(float duracion);
     float getDuracion();
     void setEstado(bool estado);
-    bool getEstado();
+    QString getEstado();
 signals:
 private:
     int m_ID;
     QString m_nombre;
     float m_duracion;
-    bool m_estado;
+    QString m_estado;
 };
 
 #endif // PELICULAS_H
