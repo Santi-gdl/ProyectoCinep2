@@ -9,16 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    dulceria.cpp \
     main.cpp \
     cine.cpp \
     peliculas.cpp
 
 HEADERS += \
     cine.h \
+    dulceria.h \
     peliculas.h
 
 FORMS += \
-    cine.ui
+    cine.ui \
+    dulceria.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

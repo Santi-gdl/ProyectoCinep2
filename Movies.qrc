@@ -5,4 +5,13 @@
         <file>Peliculas/HO00000663.jpg</file>
         <file>Peliculas/Thor_Love_and_Thunder-306525443-large.jpg</file>
     </qresource>
+    <qresource prefix="/">
+        <file>Peliculas/Combos Cine/WhatsApp Image 2022-07-13 at 11.51.05 AM.jpeg</file>
+        <file>Peliculas/Combos Cine/WhatsApp Image 2022-07-13 at 11.51.18 AM.jpeg</file>
+        <file>Peliculas/Combos Cine/WhatsApp Image 2022-07-13 at 11.51.32 AM.jpeg</file>
+        <file>Peliculas/Combos Cine/WhatsApp Image 2022-07-13 at 11.51.52 AM.jpeg</file>
+        <file>Peliculas/Combos Cine/WhatsApp Image 2022-07-13 at 11.52.23 AM.jpeg</file>
+        <file>Peliculas/Combos Cine/WhatsApp Image 2022-07-13 at 11.52.49 AM.jpeg</file>
+        <file>Peliculas/Combos Cine/WhatsApp Image 2022-07-13 at 11.53.04 AM.jpeg</file>
+    </qresource>
 </RCC>

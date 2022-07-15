@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QMessageBox>
+#include <QDir>
 #include "peliculas.h"
 
 QT_BEGIN_NAMESPACE
@@ -19,6 +20,9 @@ class Cine : public QMainWindow
 public:
     Cine(QWidget *parent = nullptr);
     ~Cine();
+
+private slots:
+    void on_actionDulceria_triggered();
 
 private:
     QList<Peliculas*> m_peliculas;
