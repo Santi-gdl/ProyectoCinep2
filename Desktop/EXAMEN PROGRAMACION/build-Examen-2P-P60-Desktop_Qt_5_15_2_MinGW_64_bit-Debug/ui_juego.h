@@ -12,7 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QMainWindow>
@@ -33,16 +33,16 @@ public:
     QAction *actionSalir;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
-    QFrame *marco;
+    QGraphicsView *lienzo;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QWidget *widget_2;
     QGridLayout *gridLayout;
+    QPushButton *btnArriba;
     QPushButton *btnAbajo;
     QPushButton *btnIzqueirda;
     QPushButton *btnDerecha;
-    QPushButton *btnArriba;
     QSpacerItem *horizontalSpacer_2;
     QMenuBar *menubar;
     QMenu *menuArchivo;
@@ -52,7 +52,7 @@ public:
     {
         if (Juego->objectName().isEmpty())
             Juego->setObjectName(QString::fromUtf8("Juego"));
-        Juego->resize(766, 639);
+        Juego->resize(1022, 650);
         actionConfigraci0n = new QAction(Juego);
         actionConfigraci0n->setObjectName(QString::fromUtf8("actionConfigraci0n"));
         actionSalir = new QAction(Juego);
@@ -61,14 +61,11 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        marco = new QFrame(centralwidget);
-        marco->setObjectName(QString::fromUtf8("marco"));
-        marco->setMinimumSize(QSize(500, 400));
-        marco->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        marco->setFrameShape(QFrame::StyledPanel);
-        marco->setFrameShadow(QFrame::Raised);
+        lienzo = new QGraphicsView(centralwidget);
+        lienzo->setObjectName(QString::fromUtf8("lienzo"));
+        lienzo->setMinimumSize(QSize(500, 400));
 
-        verticalLayout->addWidget(marco);
+        verticalLayout->addWidget(lienzo);
 
         widget = new QWidget(centralwidget);
         widget->setObjectName(QString::fromUtf8("widget"));
@@ -83,6 +80,11 @@ public:
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         gridLayout = new QGridLayout(widget_2);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        btnArriba = new QPushButton(widget_2);
+        btnArriba->setObjectName(QString::fromUtf8("btnArriba"));
+
+        gridLayout->addWidget(btnArriba, 1, 1, 1, 1);
+
         btnAbajo = new QPushButton(widget_2);
         btnAbajo->setObjectName(QString::fromUtf8("btnAbajo"));
 
@@ -98,11 +100,6 @@ public:
 
         gridLayout->addWidget(btnDerecha, 2, 2, 1, 1);
 
-        btnArriba = new QPushButton(widget_2);
-        btnArriba->setObjectName(QString::fromUtf8("btnArriba"));
-
-        gridLayout->addWidget(btnArriba, 1, 1, 1, 1);
-
 
         horizontalLayout->addWidget(widget_2);
 
@@ -116,7 +113,7 @@ public:
         Juego->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Juego);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 766, 26));
+        menubar->setGeometry(QRect(0, 0, 1022, 26));
         menuArchivo = new QMenu(menubar);
         menuArchivo->setObjectName(QString::fromUtf8("menuArchivo"));
         Juego->setMenuBar(menubar);
@@ -139,10 +136,10 @@ public:
         Juego->setWindowTitle(QCoreApplication::translate("Juego", "Juego", nullptr));
         actionConfigraci0n->setText(QCoreApplication::translate("Juego", "Configraci\303\263n", nullptr));
         actionSalir->setText(QCoreApplication::translate("Juego", "Salir", nullptr));
+        btnArriba->setText(QCoreApplication::translate("Juego", "Arriba", nullptr));
         btnAbajo->setText(QCoreApplication::translate("Juego", "Abajo", nullptr));
         btnIzqueirda->setText(QCoreApplication::translate("Juego", "Izquierda", nullptr));
         btnDerecha->setText(QCoreApplication::translate("Juego", "Derecha", nullptr));
-        btnArriba->setText(QCoreApplication::translate("Juego", "Arriba", nullptr));
         menuArchivo->setTitle(QCoreApplication::translate("Juego", "Archivo", nullptr));
     } // retranslateUi
 
