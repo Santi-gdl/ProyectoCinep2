@@ -52,7 +52,7 @@ public:
     {
         if (Juego->objectName().isEmpty())
             Juego->setObjectName(QString::fromUtf8("Juego"));
-        Juego->resize(518, 591);
+        Juego->resize(766, 639);
         actionConfigraci0n = new QAction(Juego);
         actionConfigraci0n->setObjectName(QString::fromUtf8("actionConfigraci0n"));
         actionSalir = new QAction(Juego);
@@ -64,6 +64,7 @@ public:
         marco = new QFrame(centralwidget);
         marco->setObjectName(QString::fromUtf8("marco"));
         marco->setMinimumSize(QSize(500, 400));
+        marco->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         marco->setFrameShape(QFrame::StyledPanel);
         marco->setFrameShadow(QFrame::Raised);
 
@@ -115,7 +116,7 @@ public:
         Juego->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Juego);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 518, 22));
+        menubar->setGeometry(QRect(0, 0, 766, 26));
         menuArchivo = new QMenu(menubar);
         menuArchivo->setObjectName(QString::fromUtf8("menuArchivo"));
         Juego->setMenuBar(menubar);
