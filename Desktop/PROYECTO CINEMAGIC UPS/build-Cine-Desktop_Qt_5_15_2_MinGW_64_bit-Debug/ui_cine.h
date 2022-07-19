@@ -10,12 +10,14 @@
 #define UI_CINE_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -29,6 +31,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Cine
 {
 public:
+    QAction *actionDulceria;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QLabel *label_5;
@@ -47,15 +50,18 @@ public:
     QPushButton *pushButton_4;
     QTableWidget *outPeliculas;
     QMenuBar *menubar;
+    QMenu *menuArchivo;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Cine)
     {
         if (Cine->objectName().isEmpty())
             Cine->setObjectName(QString::fromUtf8("Cine"));
-        Cine->resize(863, 436);
+        Cine->resize(863, 468);
         Cine->setMaximumSize(QSize(16000, 600));
         Cine->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        actionDulceria = new QAction(Cine);
+        actionDulceria->setObjectName(QString::fromUtf8("actionDulceria"));
         centralwidget = new QWidget(Cine);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -171,11 +177,17 @@ public:
         Cine->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Cine);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 863, 22));
+        menubar->setGeometry(QRect(0, 0, 863, 26));
+        menuArchivo = new QMenu(menubar);
+        menuArchivo->setObjectName(QString::fromUtf8("menuArchivo"));
         Cine->setMenuBar(menubar);
         statusbar = new QStatusBar(Cine);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         Cine->setStatusBar(statusbar);
+
+        menubar->addAction(menuArchivo->menuAction());
+        menuArchivo->addAction(actionDulceria);
+        menuArchivo->addSeparator();
 
         retranslateUi(Cine);
 
@@ -185,6 +197,7 @@ public:
     void retranslateUi(QMainWindow *Cine)
     {
         Cine->setWindowTitle(QCoreApplication::translate("Cine", "Cine", nullptr));
+        actionDulceria->setText(QCoreApplication::translate("Cine", "Dulceria", nullptr));
         label_5->setText(QCoreApplication::translate("Cine", "<html><head/><body><p>    BIENVENIDO A CINEMAGIC'S UPS</p></body></html>", nullptr));
         pushButton_3->setText(QString());
         pushButton_2->setText(QString());
@@ -194,6 +207,7 @@ public:
         Peli1_3->setText(QString());
         Peli1_2->setText(QString());
         pushButton_4->setText(QString());
+        menuArchivo->setTitle(QCoreApplication::translate("Cine", "Archivo", nullptr));
     } // retranslateUi
 
 };
