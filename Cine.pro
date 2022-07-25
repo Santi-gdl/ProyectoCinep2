@@ -12,16 +12,19 @@ SOURCES += \
     dulceria.cpp \
     main.cpp \
     cine.cpp \
-    peliculas.cpp
+    peliculas.cpp \
+    widget.cpp
 
 HEADERS += \
     cine.h \
     dulceria.h \
-    peliculas.h
+    peliculas.h \
+    widget.h
 
 FORMS += \
     cine.ui \
-    dulceria.ui
+    dulceria.ui \
+    widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
