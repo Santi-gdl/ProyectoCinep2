@@ -26,6 +26,9 @@ FORMS += \
     dulceria.ui \
     widget.ui
 
+TRANSLATIONS += \
+    Cine_it.qm
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
@@ -33,3 +36,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Movies.qrc
+
+
+

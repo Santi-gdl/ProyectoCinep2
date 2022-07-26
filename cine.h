@@ -7,6 +7,8 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QDir>
+#include <QTranslator>
+#include <QInputDialog>
 #include "peliculas.h"
 #include "widget.h"
 

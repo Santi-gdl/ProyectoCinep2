@@ -11,7 +11,6 @@ Cine::Cine(QWidget *parent)
     ui->setupUi(this);
        Peliculas();
        cont=0;
-       Direc={"/debug/AsientosOc.csv","/debug/Sala2.csv","/debug/Sala3.csv","/debug/Sala4.csv"};
        CrearTabla();
        IngresarPelis();
 }
@@ -35,26 +34,30 @@ void Cine::on_actionDulceria_triggered()
 
 void Cine::on_inSala_clicked()
 {
+    QString A1=":/AsientosOc.csv";
+    QString A2="/debug/Sala2.csv";
+    QString A3="/debug/Sala3.csv";
+    QString A4="/debug/Sala4.csv";
     QString Peli = ui->inPelis->currentText();
     int Boletos = ui->inNBol->value();
    if(Peli=="Los Minions"&& Boletos>0){
         cont=Boletos;
-        Widget *opennew = new Widget(Peli,Direc[0],Boletos);
+        Widget *opennew = new Widget(Peli,A1,Boletos);
         opennew->setWindowModality(Qt::ApplicationModal);
         opennew->show();
    }else if(Peli=="Thor: Love and Thunder"&& Boletos>0){
         cont=Boletos;
-        Widget *opennew = new Widget(Peli,Direc[1],Boletos);
+        Widget *opennew = new Widget(Peli,A2,Boletos);
         opennew->setWindowModality(Qt::ApplicationModal);
         opennew->show();
    }else if(Peli=="Lightyear "&& Boletos>0){
            cont=Boletos;
-           Widget *opennew = new Widget(Peli,Direc[2],Boletos);
+           Widget *opennew = new Widget(Peli,A3,Boletos);
            opennew->setWindowModality(Qt::ApplicationModal);
            opennew->show();
     }else if(Peli=="Top Gun: Maverick"&& Boletos>0){
        cont=Boletos;
-       Widget *opennew = new Widget(Peli,Direc[3],Boletos);
+       Widget *opennew = new Widget(Peli,A4,Boletos);
        opennew->setWindowModality(Qt::ApplicationModal);
        opennew->show();
     }else{
@@ -97,7 +100,8 @@ void Cine::IngresarPelis()
 {
     QTextStream io;
     QDir actual = QDir::current();
-    QString archivoPelis = actual.absolutePath() + "/debug/Peliculas.csv";
+    QString archivoPelis = actual.absolutePath() + "Peliculas.csv";
+    qDebug()<<archivoPelis;
     QFile archivo(archivoPelis);
     archivo.open(QIODevice::ReadOnly | QIODevice::Text);
     if(!archivo.isOpen()){
