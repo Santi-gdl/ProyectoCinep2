@@ -25,15 +25,16 @@ public:
 private slots:
     void on_actionDulceria_triggered();
 
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_clicked();
+    void on_inSala_clicked();
 
 private:
     QList<Peliculas*> m_peliculas;
     Ui::Cine *ui;
     Peliculas a;
-    Widget co;
     int cont;
+    QStringList Direc;
+    int contarA();
+    void CrearTabla();
+    void IngresarPelis();
 };
 #endif // CINE_H

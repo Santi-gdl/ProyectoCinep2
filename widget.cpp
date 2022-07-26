@@ -3,17 +3,26 @@
 #include <QMessageBox>
 #include <QDebug>
 
-Widget::Widget(QWidget *parent)
+Widget::Widget()
+{
+
+}
+
+Widget::Widget(QString A, QString dire, int B, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
+    Direc=dire;
+    Boletos=B;
     ui->setupUi(this);
     cont=0;
+    i=0;
+    ui->Ptot->setText(QString::number(B*3.5));
     QStringList tituloColumna;
     int fila = ui->tableWidget->rowCount();
     int Colum =ui->tableWidget->columnCount();
     tituloColumna<<"A"<<"B"<<"C"<<"D"<<"E"<<"F";
-    setWindowTitle("Sala");
+    setWindowTitle(A);
     ui->tableWidget->setColumnCount(5);
     ui->tableWidget->setRowCount(5);
     ui->tableWidget->setVerticalHeaderLabels(tituloColumna);
@@ -50,15 +59,19 @@ void Widget::on_tableWidget_cellClicked(int row, int column)
 {
     QTableWidgetItem *items =  new QTableWidgetItem;
     items->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
-    if(Asientos[row][column]!=1){
+    if(Boletos==0){
+        QMessageBox::information(this,"Error","ya ha seleccionado sus butacas");
+    }else if(Asientos[row][column]!=1){
         ui->tableWidget->setItem(row, column,items);
-        ui->tableWidget->item(row, column)->setIcon(QIcon(":/ProyectoCinep2/Peliculas/Peliculas/estados/Recurso 3@2x.png"));
+        ui->tableWidget->item(row, column)->setIcon(QIcon(":/ProyectoCinep2/Peliculas/Peliculas/estados/Recurso 1@2x.png"));
         ui->tableWidget->setIconSize(QSize(30,30));
         Asientos[row][column]=1;
-        cont++;
-        ui->outBut->setText(QString::number(cont));
+        Boletos--;
+        filas[i]=row;
+        Columnas[i]=column;
+        i++;
     }else{
-      QMessageBox::information(this,"Error","Butaca ya seleccionada");
+      QMessageBox::information(this,"Error","La butaca ya esta ocupada");
     }
 
 }
@@ -68,7 +81,7 @@ void Widget::ButacasDeArc()
 {
     QTextStream io;
     QDir actual = QDir::current();
-    QString archivoPelis = actual.absolutePath() + "/debug/AsientosOc.csv";
+    QString archivoPelis = actual.absolutePath() + Direc;
     QFile archivo(archivoPelis);
     archivo.open(QIODevice::ReadOnly | QIODevice::Text);
     if(!archivo.isOpen()){
@@ -79,23 +92,38 @@ void Widget::ButacasDeArc()
     while(!io.atEnd()){
         auto linea = io.readLine();
         auto datos = linea.split(";");
-        qDebug()<<datos;
         int fil = datos[0].toInt();
         int col = datos[1].toInt();
+        cont++;
+        Boletos++;
         on_tableWidget_cellClicked(fil, col);
     }
+    on_pushButton_clicked();
 }
 
 
 void Widget::on_pushButton_clicked()
 {
-    getCont();
-    update();
-    close();
+  while(i!=0){
+      i--;
+      qDebug()<<filas[i]<<" "<<Columnas[i];
+          if(Asientos[filas[i]][Columnas[i]]==1){
+                    ui->tableWidget->setItem(filas[i], Columnas[i],new QTableWidgetItem);
+                    ui->tableWidget->item(filas[i],Columnas[i])->setIcon(QIcon(":/ProyectoCinep2/Peliculas/Peliculas/estados/Recurso 3@2x.png"));
+                    ui->tableWidget->setIconSize(QSize(30,30));
+                    ui->outBut->setText(QString::number(Boletos));
+          }
+    }
 }
 
 int Widget::getCont() const
 {
     return cont;
+}
+
+
+void Widget::on_pushButton_2_clicked()
+{
+
 }
 
