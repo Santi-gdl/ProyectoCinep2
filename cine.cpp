@@ -34,10 +34,10 @@ void Cine::on_actionDulceria_triggered()
 
 void Cine::on_inSala_clicked()
 {
-    QString A1=":/AsientosOc.csv";
-    QString A2="/debug/Sala2.csv";
-    QString A3="/debug/Sala3.csv";
-    QString A4="/debug/Sala4.csv";
+    QString A1="/AsientosOc.csv";
+    QString A2="/Sala2.csv";
+    QString A3="/Sala3.csv";
+    QString A4="/Sala4.csv";
     QString Peli = ui->inPelis->currentText();
     int Boletos = ui->inNBol->value();
    if(Peli=="Los Minions"&& Boletos>0){
@@ -69,7 +69,7 @@ int Cine::contarA()
 {
         QTextStream io;
         QDir actual = QDir::current();
-        QString archivoPelis = actual.absolutePath() + Direc[0];
+        QString archivoPelis = actual.absolutePath() + "/AsientosOc.csv";
         QFile archivo(archivoPelis);
         archivo.open(QIODevice::ReadOnly | QIODevice::Text);
         if(!archivo.isOpen()){
@@ -100,7 +100,7 @@ void Cine::IngresarPelis()
 {
     QTextStream io;
     QDir actual = QDir::current();
-    QString archivoPelis = actual.absolutePath() + "Peliculas.csv";
+    QString archivoPelis = actual.absolutePath() + "/Peliculas.csv";
     qDebug()<<archivoPelis;
     QFile archivo(archivoPelis);
     archivo.open(QIODevice::ReadOnly | QIODevice::Text);

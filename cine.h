@@ -34,7 +34,6 @@ private:
     Ui::Cine *ui;
     Peliculas a;
     int cont;
-    QStringList Direc;
     int contarA();
     void CrearTabla();
     void IngresarPelis();
