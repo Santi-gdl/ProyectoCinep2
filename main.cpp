@@ -15,7 +15,6 @@ int main(int argc, char *argv[])
 
     if (lang == "Italiano"){
         T.load(":/Cine_it.qm");
-    } else if (lang !="Espanol"){
         a.installTranslator(&T);
     }
     Cine w;

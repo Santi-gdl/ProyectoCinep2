@@ -34,10 +34,10 @@ void Cine::on_actionDulceria_triggered()
 
 void Cine::on_inSala_clicked()
 {
-    QString A1="/AsientosOc.csv";
-    QString A2="/Sala2.csv";
-    QString A3="/Sala3.csv";
-    QString A4="/Sala4.csv";
+    QString A1="/Debug/AsientosOc.csv";
+    QString A2="/Debug/Sala2.csv";
+    QString A3="/Debug/Sala3.csv";
+    QString A4="/Debug/Sala4.csv";
     QString Peli = ui->inPelis->currentText();
     int Boletos = ui->inNBol->value();
    if(Peli=="Los Minions"&& Boletos>0){
@@ -63,19 +63,29 @@ void Cine::on_inSala_clicked()
     }else{
         QMessageBox::information(this,"Error","Debe Ingresar los boletos");
    }
+   ui->inNBol->setValue(0);
 }
 
-int Cine::contarA()
+int Cine::contarA(int F)
 {
+    QString A1="/Debug/AsientosOc.csv";
+    QString A2="/Debug/Sala2.csv";
+    QString A3="/Debug/Sala3.csv";
+    QString A4="/Debug/Sala4.csv";
+    QStringList direcciones={A1,A2,A3,A4};
         QTextStream io;
         QDir actual = QDir::current();
-        QString archivoPelis = actual.absolutePath() + "/AsientosOc.csv";
+        QString archivoPelis = actual.absolutePath() + direcciones[F];
+        qDebug()<<direcciones[F];
         QFile archivo(archivoPelis);
         archivo.open(QIODevice::ReadOnly | QIODevice::Text);
         if(!archivo.isOpen()){
             QMessageBox::critical(this,"Error",archivo.errorString());
         }
         io.setDevice(&archivo);
+        if(F++){
+            cont=0;
+        }
         while(!io.atEnd()){
                 auto linea = io.readLine();
                 auto datos = linea.split(";");
@@ -100,7 +110,7 @@ void Cine::IngresarPelis()
 {
     QTextStream io;
     QDir actual = QDir::current();
-    QString archivoPelis = actual.absolutePath() + "/Peliculas.csv";
+    QString archivoPelis = actual.absolutePath() + "/Debug/Peliculas.csv";
     qDebug()<<archivoPelis;
     QFile archivo(archivoPelis);
     archivo.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -110,6 +120,7 @@ void Cine::IngresarPelis()
     }
     io.setDevice(&archivo);
     int fila = ui->outPeliculas->rowCount();
+    int i=0;
     while(!io.atEnd()){
         auto linea = io.readLine();
         auto datos = linea.split(";");
@@ -139,12 +150,14 @@ void Cine::IngresarPelis()
         ui->outPeliculas->setItem(fila, 3, item4);
         ui->outPeliculas->item(fila,3)->setTextAlignment(Qt::AlignCenter);
         ui->outPeliculas->horizontalHeader()->setSectionResizeMode(3, QHeaderView::Stretch);
-        ui->outPeliculas->setItem(fila,4,new QTableWidgetItem(QString::number(contarA())));
+        ui->outPeliculas->setItem(fila,4,new QTableWidgetItem(QString::number(contarA(i))));
         ui->outPeliculas->item(fila,4)->setTextAlignment(Qt::AlignCenter);
         ui->outPeliculas->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Stretch);
         ui->outPeliculas->horizontalHeader()->setStretchLastSection(QHeaderView::Stretch);
         ui->inPelis->addItem(nombre);
-        qDebug()<<fila;
+        i++;
+        qDebug()<<i;
     }
 }
+
 

@@ -34,7 +34,7 @@ private:
     Ui::Cine *ui;
     Peliculas a;
     int cont;
-    int contarA();
+    int contarA(int F);
     void CrearTabla();
     void IngresarPelis();
 };

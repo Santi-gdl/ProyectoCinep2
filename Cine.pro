@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     dulceria.cpp \
+    facturacion.cpp \
     main.cpp \
     cine.cpp \
     peliculas.cpp \
@@ -18,12 +19,14 @@ SOURCES += \
 HEADERS += \
     cine.h \
     dulceria.h \
+    facturacion.h \
     peliculas.h \
     widget.h
 
 FORMS += \
     cine.ui \
     dulceria.ui \
+    facturacion.ui \
     widget.ui
 
 TRANSLATIONS += \
@@ -35,7 +38,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    Movies.qrc
+    Movies.qrc \
+    Cine_it.qm
 
 
 

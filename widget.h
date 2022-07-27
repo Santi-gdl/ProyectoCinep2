@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QDir>
+#include "facturacion.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -20,16 +21,24 @@ public:
 
     int getCont() const;
 
+    int getBol() const;
+    void setBol(int newBol);
+
+    const QString &getNombre() const;
+
 private slots:
     void on_tableWidget_cellClicked(int row, int column);
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::Widget *ui;
     QString Nombre;
     QString Direc;
+    int bol;
     int Boletos;
     int Asientos[5][5]={0};
     int cont;

@@ -12,8 +12,10 @@ Widget::Widget(QString A, QString dire, int B, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
+    Nombre=A;
     Direc=dire;
     Boletos=B;
+    bol=B;
     ui->setupUi(this);
     cont=0;
     i=0;
@@ -99,6 +101,8 @@ void Widget::ButacasDeArc()
         on_tableWidget_cellClicked(fil, col);
     }
     on_pushButton_clicked();
+    ui->pushButton_3->setDisabled(true);
+    ui->inCF->setDisabled(true);
 }
 
 
@@ -106,12 +110,15 @@ void Widget::on_pushButton_clicked()
 {
   while(i!=0){
       i--;
-      qDebug()<<filas[i]<<" "<<Columnas[i];
           if(Asientos[filas[i]][Columnas[i]]==1){
                     ui->tableWidget->setItem(filas[i], Columnas[i],new QTableWidgetItem);
                     ui->tableWidget->item(filas[i],Columnas[i])->setIcon(QIcon(":/ProyectoCinep2/Peliculas/Peliculas/estados/Recurso 3@2x.png"));
                     ui->tableWidget->setIconSize(QSize(30,30));
                     ui->outBut->setText(QString::number(Boletos));
+          }
+          if(Boletos==0){
+              ui->pushButton_3->setDisabled(false);
+              ui->inCF->setDisabled(false);
           }
     }
 }
@@ -125,5 +132,29 @@ int Widget::getCont() const
 void Widget::on_pushButton_2_clicked()
 {
 
+}
+
+
+void Widget::on_pushButton_3_clicked()
+{
+    close();
+       Facturacion *opennew = new Facturacion(filas,Columnas,bol,Nombre);
+       opennew->setWindowModality(Qt::ApplicationModal);
+       opennew->show();
+}
+
+const QString &Widget::getNombre() const
+{
+    return Nombre;
+}
+
+int Widget::getBol() const
+{
+    return bol;
+}
+
+void Widget::setBol(int newBol)
+{
+    bol = newBol;
 }
 
