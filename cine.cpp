@@ -25,9 +25,7 @@ Cine::~Cine()
 
 void Cine::on_actionDulceria_triggered()
 {
-    Dulceria *opennew= new Dulceria();
-    opennew->setWindowModality(Qt::ApplicationModal);
-    opennew->show();
+
 }
 
 

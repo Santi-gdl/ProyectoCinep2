@@ -28,7 +28,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="0">
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="QWidget" name="inDatos" native="true">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -220,6 +220,19 @@ border-radius:10px;</string>
          </widget>
         </item>
        </layout>
+      </widget>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>101</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Agregar Combos</string>
+       </property>
       </widget>
      </widget>
     </item>

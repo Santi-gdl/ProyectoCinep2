@@ -131,17 +131,12 @@ int Widget::getCont() const
 
 void Widget::on_pushButton_2_clicked()
 {
-
-}
-
-
-void Widget::on_pushButton_3_clicked()
-{
     close();
-       Facturacion *opennew = new Facturacion(filas,Columnas,bol,Nombre);
+       Facturacion *opennew = new Facturacion(filas,Columnas,bol,Nombre,false);
        opennew->setWindowModality(Qt::ApplicationModal);
        opennew->show();
 }
+
 
 const QString &Widget::getNombre() const
 {
@@ -156,5 +151,23 @@ int Widget::getBol() const
 void Widget::setBol(int newBol)
 {
     bol = newBol;
+}
+
+
+void Widget::on_inCF_clicked()
+{
+    close();
+       Facturacion *opennew = new Facturacion(filas,Columnas,bol,Nombre,false);
+       opennew->setWindowModality(Qt::ApplicationModal);
+       opennew->show();
+}
+
+
+void Widget::on_pushButton_3_clicked()
+{
+    close();
+       Facturacion *opennew = new Facturacion(filas,Columnas,bol,Nombre,true);
+       opennew->setWindowModality(Qt::ApplicationModal);
+       opennew->show();
 }
 

@@ -15,8 +15,15 @@ public:
     explicit Dulceria(QWidget *parent = nullptr);
     ~Dulceria();
 
+    const QString &getNombres() const;
+    void setNombres(const QString &newNombres);
+
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Dulceria *ui;
+    QString nombres;
 };
 
 #endif // DULCERIA_H

@@ -12,3 +12,20 @@ Dulceria::~Dulceria()
 {
     delete ui;
 }
+
+void Dulceria::on_pushButton_clicked()
+{
+    setNombres("-Gaseosa peq,-Canguil peq");
+    close();
+}
+
+const QString &Dulceria::getNombres() const
+{
+    return nombres;
+}
+
+void Dulceria::setNombres(const QString &newNombres)
+{
+    nombres = newNombres;
+}
+

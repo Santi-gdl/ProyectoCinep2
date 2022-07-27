@@ -33,6 +33,7 @@ private:
     QList<Peliculas*> m_peliculas;
     Ui::Cine *ui;
     Peliculas a;
+    Widget *Co;
     int cont;
     int contarA(int F);
     void CrearTabla();

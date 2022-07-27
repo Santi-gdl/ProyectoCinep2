@@ -1,11 +1,13 @@
 #include "facturacion.h"
 #include "ui_facturacion.h"
 
-Facturacion::Facturacion(int F[25],int C[25],int NF,QString name,QWidget *parent) :
+Facturacion::Facturacion(int F[25],int C[25],int NF,QString name,bool E,QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Facturacion)
 {
     ui->setupUi(this);
+    //ui->inDatos->setDisabled(E);
+    ui->inDatos->setVisible(E);
     ui->outIVA->setText(QString::number(CalculoIVA(CalculoDeBoletos(NF))));
     ui->outSub->setText(QString::number(CalculoDeBoletos(NF)));
     setWindowTitle("Facturacion");
@@ -49,7 +51,6 @@ Facturacion::Facturacion(int F[25],int C[25],int NF,QString name,QWidget *parent
         ui->tableWidget->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Stretch);
         ui->tableWidget->horizontalHeader()->setStretchLastSection(QHeaderView::Stretch);
     }
-
 }
 
 Facturacion::~Facturacion()
@@ -84,5 +85,13 @@ void Facturacion::on_pushButton_2_clicked()
 void Facturacion::on_pushButton_clicked()
 {
     close();
+}
+
+
+void Facturacion::on_pushButton_3_clicked()
+{
+    Dulceria *opennew= new Dulceria();
+    opennew->setWindowModality(Qt::ApplicationModal);
+    opennew->show();
 }
 
