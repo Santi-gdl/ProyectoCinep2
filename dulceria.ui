@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1253</width>
-    <height>670</height>
+    <width>1183</width>
+    <height>589</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>30</y>
-      <width>521</width>
-      <height>571</height>
+      <x>50</x>
+      <y>10</y>
+      <width>481</width>
+      <height>511</height>
      </rect>
     </property>
     <property name="title">
@@ -29,21 +29,21 @@
     <widget class="QRadioButton" name="radioButton">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>110</y>
-       <width>110</width>
-       <height>24</height>
+       <x>20</x>
+       <y>150</y>
+       <width>351</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>COMBO 1 </string>
+      <string>COMBO 1 (1 CANGUIL PEQ + 1 GASEOSA PEQ)</string>
      </property>
     </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>60</y>
+       <y>100</y>
        <width>241</width>
        <height>41</height>
       </rect>
@@ -58,174 +58,53 @@
     <widget class="QRadioButton" name="radioButton_2">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>110</y>
-       <width>110</width>
+       <x>20</x>
+       <y>190</y>
+       <width>431</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>COMBO 2</string>
+      <string>COMBO 2 (1 CANGUIL MED + 1 GASEOSA PEQ)</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_3">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>110</y>
-       <width>110</width>
+       <x>20</x>
+       <y>230</y>
+       <width>441</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>COMBO 3 </string>
+      <string>COMBO 3 (1 CANGUIL MED + 2 GASEOSAS MED)</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_4">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>160</y>
-       <width>110</width>
+       <x>20</x>
+       <y>270</y>
+       <width>401</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>COMBO 4 </string>
+      <string>COMBO 4 (1 CANGUIL GRA + 2 GASEOSAS GRA)</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_5">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>160</y>
-       <width>110</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>COMBO 5</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_6">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
-       <y>160</y>
-       <width>110</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>COMBO 6 </string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
        <x>20</x>
-       <y>200</y>
-       <width>211</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 20pt &quot;Sitka Display&quot;;</string>
-     </property>
-     <property name="text">
-      <string>ADICIONALES</string>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="spinBox">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>250</y>
-       <width>42</width>
-       <height>26</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>260</y>
-       <width>111</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>GASEOSAS</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>290</y>
-       <width>63</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>AGUAS</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>320</y>
-       <width>63</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>NACHOS</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>350</y>
-       <width>71</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>HOT DOG</string>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="spinBox_2">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>280</y>
-       <width>42</width>
-       <height>26</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="spinBox_3">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
        <y>310</y>
-       <width>42</width>
-       <height>26</height>
+       <width>441</width>
+       <height>24</height>
       </rect>
      </property>
-    </widget>
-    <widget class="QSpinBox" name="spinBox_4">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>340</y>
-       <width>42</width>
-       <height>26</height>
-      </rect>
+     <property name="text">
+      <string>COMBO 5 (1 CANGUIL GRA + 2 GASEOSAS + 2 HOT DOGS)</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
@@ -241,6 +120,19 @@
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>380</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&amp;Aceptar</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -248,7 +140,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1253</width>
+     <width>1183</width>
      <height>26</height>
     </rect>
    </property>
