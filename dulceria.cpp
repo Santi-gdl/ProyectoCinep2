@@ -6,6 +6,8 @@ Dulceria::Dulceria(QWidget *parent) :
     ui(new Ui::Dulceria)
 {
     ui->setupUi(this);
+    Acceder=false;
+    setNombres("Combo1");
 }
 
 Dulceria::~Dulceria()
@@ -13,10 +15,15 @@ Dulceria::~Dulceria()
     delete ui;
 }
 
-void Dulceria::on_pushButton_clicked()
+
+bool Dulceria::getAcceder() const
 {
-    setNombres("-Gaseosa peq,-Canguil peq");
-    close();
+    return Acceder;
+}
+
+void Dulceria::setAcceder(bool newAcceder)
+{
+    Acceder = newAcceder;
 }
 
 const QString &Dulceria::getNombres() const
@@ -27,5 +34,10 @@ const QString &Dulceria::getNombres() const
 void Dulceria::setNombres(const QString &newNombres)
 {
     nombres = newNombres;
+}
+void Dulceria::on_Accept_clicked()
+{
+    setAcceder(true);
+    close();
 }
 

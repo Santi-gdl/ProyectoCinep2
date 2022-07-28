@@ -18,12 +18,18 @@ public:
     const QString &getNombres() const;
     void setNombres(const QString &newNombres);
 
+    bool getAcceder() const;
+    void setAcceder(bool newAcceder);
+
 private slots:
-    void on_pushButton_clicked();
+
+
+    void on_Accept_clicked();
 
 private:
     Ui::Dulceria *ui;
     QString nombres;
+    bool Acceder;
 };
 
 #endif // DULCERIA_H

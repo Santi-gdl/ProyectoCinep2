@@ -37,7 +37,7 @@ Facturacion::Facturacion(int F[25],int C[25],int NF,QString name,bool E,QWidget 
         ui->tableWidget->setItem(fila, 0, new QTableWidgetItem(QString::number(i+1)));;
         ui->tableWidget->item(fila,0)->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        ui->tableWidget->setItem(fila, 1, new QTableWidgetItem(name));;
+        ui->tableWidget->setItem(fila, 1, new QTableWidgetItem(name));
         ui->tableWidget->item(fila,1)->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
         ui->tableWidget->setItem(fila, 2, new QTableWidgetItem(A));
@@ -51,6 +51,9 @@ Facturacion::Facturacion(int F[25],int C[25],int NF,QString name,bool E,QWidget 
         ui->tableWidget->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Stretch);
         ui->tableWidget->horizontalHeader()->setStretchLastSection(QHeaderView::Stretch);
     }
+    //int fila = ui->tableWidget->rowCount();
+
+
 }
 
 Facturacion::~Facturacion()
