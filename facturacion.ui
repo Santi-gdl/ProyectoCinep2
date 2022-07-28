@@ -43,7 +43,7 @@
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>181</width>
+         <width>281</width>
          <height>121</height>
         </rect>
        </property>
@@ -244,7 +244,7 @@ border-radius:10px;</string>
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
