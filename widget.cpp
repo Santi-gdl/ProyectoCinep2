@@ -12,6 +12,7 @@ Widget::Widget(QString A, QString dire, int B, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
+    guardar=false;
     Nombre=A;
     Direc=dire;
     Boletos=B;
@@ -103,11 +104,17 @@ void Widget::ButacasDeArc()
     on_pushButton_clicked();
     ui->pushButton_3->setDisabled(true);
     ui->inCF->setDisabled(true);
+
 }
 
 
 void Widget::on_pushButton_clicked()
 {
+    QTextStream io;
+    QDir actual = QDir::current();
+    QString archivoPelis = actual.absolutePath() + Direc;
+    qDebug()<<archivoPelis;
+    QFile archivo(archivoPelis);
   while(i!=0){
       i--;
           if(Asientos[filas[i]][Columnas[i]]==1){
@@ -115,12 +122,23 @@ void Widget::on_pushButton_clicked()
                     ui->tableWidget->item(filas[i],Columnas[i])->setIcon(QIcon(":/ProyectoCinep2/Peliculas/Peliculas/estados/Recurso 3@2x.png"));
                     ui->tableWidget->setIconSize(QSize(30,30));
                     ui->outBut->setText(QString::number(Boletos));
+                    if(guardar==true){
+                        archivo.open(QIODevice::ReadWrite| QIODevice::Append);
+                        if(!archivo.isOpen()){
+                            QMessageBox::critical(this,"Error",archivo.errorString());
+                        }
+                        io.setDevice(&archivo);
+                        io  << filas[i] << ";" << Columnas[i] <<"\n";
+                        archivo.close();
+                    }
+                    qDebug()<< guardar;
           }
           if(Boletos==0){
               ui->pushButton_3->setDisabled(false);
               ui->inCF->setDisabled(false);
           }
     }
+  guardar=true;
 }
 
 int Widget::getCont() const

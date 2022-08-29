@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDir>
 #include "facturacion.h"
+#include "cine.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -47,5 +48,6 @@ private:
     int i;
     int filas[25];
     int Columnas[25];
+    bool guardar;
 };
 #endif // WIDGET_H

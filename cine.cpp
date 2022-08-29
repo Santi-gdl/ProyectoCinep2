@@ -32,6 +32,7 @@ void Cine::on_actionDulceria_triggered()
 
 void Cine::on_inSala_clicked()
 {
+    close();
     QString A1="/Debug/AsientosOc.csv";
     QString A2="/Debug/Sala2.csv";
     QString A3="/Debug/Sala3.csv";
@@ -48,18 +49,23 @@ void Cine::on_inSala_clicked()
         Widget *opennew = new Widget(Peli,A2,Boletos);
         opennew->setWindowModality(Qt::ApplicationModal);
         opennew->show();
+
    }else if(Peli=="Lightyear "&& Boletos>0){
            cont=Boletos;
            Widget *opennew = new Widget(Peli,A3,Boletos);
            opennew->setWindowModality(Qt::ApplicationModal);
            opennew->show();
+
     }else if(Peli=="Top Gun: Maverick"&& Boletos>0){
        cont=Boletos;
        Widget *opennew = new Widget(Peli,A4,Boletos);
        opennew->setWindowModality(Qt::ApplicationModal);
        opennew->show();
+
     }else{
         QMessageBox::information(this,"Error","Debe Ingresar los boletos");
+        show();
+        return;
    }
    ui->inNBol->setValue(0);
 }

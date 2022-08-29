@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     dulceria.cpp \
     facturacion.cpp \
+    impresion.cpp \
     main.cpp \
     cine.cpp \
     peliculas.cpp \
@@ -20,6 +21,7 @@ HEADERS += \
     cine.h \
     dulceria.h \
     facturacion.h \
+    impresion.h \
     peliculas.h \
     widget.h
 
@@ -27,6 +29,7 @@ FORMS += \
     cine.ui \
     dulceria.ui \
     facturacion.ui \
+    impresion.ui \
     widget.ui
 
 TRANSLATIONS += \

@@ -5,6 +5,9 @@ Facturacion::Facturacion(int F[25],int C[25],int NF,QString name,bool E,QWidget 
     QMainWindow(parent),
     ui(new Ui::Facturacion)
 {
+    numB=NF;
+    qDebug()<<numB;
+    nombre="",NCedula="",NTelf="",Direc="",peli=name;
     ui->setupUi(this);
     //ui->inDatos->setDisabled(E);
     ui->inDatos->setVisible(E);
@@ -20,6 +23,8 @@ Facturacion::Facturacion(int F[25],int C[25],int NF,QString name,bool E,QWidget 
                                "QHeaderView::section { color:white; background-color:#232326; }");
     int fila = ui->tableWidget->rowCount();
     QString A;
+
+
     for (int i=NF-1;i>=0;i--){
         C[i]++;
         if(F[i]==0){
@@ -51,9 +56,7 @@ Facturacion::Facturacion(int F[25],int C[25],int NF,QString name,bool E,QWidget 
         ui->tableWidget->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Stretch);
         ui->tableWidget->horizontalHeader()->setStretchLastSection(QHeaderView::Stretch);
     }
-    //int fila = ui->tableWidget->rowCount();
-
-
+    ui->statusbar->showMessage("saved",3000);
 }
 
 Facturacion::~Facturacion()
@@ -87,6 +90,12 @@ void Facturacion::on_pushButton_2_clicked()
 
 void Facturacion::on_pushButton_clicked()
 {
+    Cine *open = new Cine();
+    open->show();
+    int A[1]={1};
+    int B[1]={2};
+    Impresion *ne = new Impresion(nombre,NCedula,NTelf,Direc,peli,numB);
+    ne->show();
     close();
 }
 
@@ -96,5 +105,29 @@ void Facturacion::on_pushButton_3_clicked()
     Dulceria *opennew= new Dulceria();
     opennew->setWindowModality(Qt::ApplicationModal);
     opennew->show();
+}
+
+
+void Facturacion::on_lineEdit_editingFinished()
+{
+    nombre=ui->lineEdit->text();
+}
+
+
+void Facturacion::on_lineEdit_2_editingFinished()
+{
+    NCedula=ui->lineEdit_2->text();
+}
+
+
+void Facturacion::on_lineEdit_3_editingFinished()
+{
+    NTelf=ui->lineEdit_3->text();
+}
+
+
+void Facturacion::on_lineEdit_4_editingFinished()
+{
+    Direc=ui->lineEdit_4->text();
 }
 

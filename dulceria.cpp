@@ -37,7 +37,6 @@ void Dulceria::setNombres(const QString &newNombres)
 }
 void Dulceria::on_Accept_clicked()
 {
-    setAcceder(true);
     close();
 }
 
